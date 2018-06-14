@@ -6,6 +6,14 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "musicLinks"
+    label: "Music Links"
+    folder: "src/content/music-links"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "music-links"}
+      - {label: "Title", name: "title", widget: string}
+      - {label: "Link", name: "link", widget: string}
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

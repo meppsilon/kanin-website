@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const { createFilePath } = require('gatsby-source-filesystem');
+const postCssPlugins = require('./postcss.config.js');
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
@@ -15,7 +16,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
@@ -44,30 +44,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         },
       })
     })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
   })
 }
 
@@ -82,4 +58,16 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
       value,
     })
   }
+}
+
+
+
+exports.modifyWebpackConfig = ({ config }) => {
+
+  config.merge(current => {
+    current.postcss = postCssPlugins;
+    return current;
+  });
+
+  return config;
 }

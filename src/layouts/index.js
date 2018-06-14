@@ -1,20 +1,66 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { Motion, spring } from "react-motion";
+import MainArea from "../components/MainArea";
+import "../css/index.css";
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+const title = 'Kanin';
+const sections = [
+  {
+    id: '',
+    title: 'Home',
+     backgroundColor: 'black',
+     color: 'white',
+  },
+  {
+    id: 'music',
+    title: 'Music',
+    style: {
+      backgroundColor: 'blue',
+      color: 'white',
+    }
+  },
+  {
+    id: 'bio',
+    title: 'Bio',
+    style: {
+      backgroundColor: 'green',
+      color: 'white',
+    }
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    style: {
+      backgroundColor: 'red',
+      color: 'white',
+    }
+  }
+];
 
-const TemplateWrapper = ({ children }) => (
+const Layout = ({ data, children, location: { pathname } }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children()}</div>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <Helmet
+      title={title}
+      meta={[
+        { name: "description", content: "Sample" },
+        { name: "keywords", content: "sample, something" }
+      ]}
+    />
+    <MainArea
+      title={title}
+      sections={sections}
+      url={pathname.slice(1)}
+    >
+      {children}
+    </MainArea>
   </div>
-)
+);
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+Layout.propTypes = {
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default Layout;
