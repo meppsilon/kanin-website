@@ -11,12 +11,21 @@ collections:
     folder: "src/content/music-links"
     fields:
       - {label: "Content Key", name: "contentKey", widget: "hidden", default: "music-links"}
-      - {label: "Title", name: "title", widget: hidden}
+      - {label: "Title", name: "title", widget: string}
       - {label: "Link", name: "link", widget: string}
   - name: "socialLinks"
     label: "Social Media Links"
     folder: "src/content/src-links"
     fields:
       - {label: "Content Key", name: "contentKey", widget: "hidden", default: "social-links"}
-      - {label: "Title", name: "title", widget: hidden}
+      - {label: "Title", name: "title", widget: string}
       - {label: "Link", name: "link", widget: string}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/bio/index.md"
+        label: "Bio"
+        name: "bio"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: hidden, default: "bio-page"}
+          - {label: "Body", name: "body", widget: markdown}

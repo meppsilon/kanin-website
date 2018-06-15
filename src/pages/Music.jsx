@@ -33,7 +33,6 @@ export default Music;
 export const pageQuery = graphql`
   query MusicQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { contentKey: { eq: "music-links" } } }
     ) {
       edges {
