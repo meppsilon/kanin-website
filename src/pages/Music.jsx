@@ -5,7 +5,6 @@ const Music = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  console.log('data', edges);
   return (
     <div id="music" className="h-screen">
       {edges.map(({ node: { frontmatter } }) => (
