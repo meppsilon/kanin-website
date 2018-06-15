@@ -71,7 +71,7 @@
 
 
 .links-social {
-  @apply .pt-2 .pb-2 .text-xl;
+  @apply .pt-2 .pb-2 .text-xl .px-7;
 }
 
 .pages-container {

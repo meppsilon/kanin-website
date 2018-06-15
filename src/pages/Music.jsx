@@ -7,12 +7,12 @@ const Music = ({
 }) => {
   console.log('data', edges);
   return (
-    <div id="music" className="pt-8 h-screen">
+    <div id="music" className="h-screen">
       {edges.map(({ node: { frontmatter } }) => (
         <a
           key={frontmatter.title}
           href={frontmatter.link}
-          className="text-center text-white block py-6 mb-6"
+          className="text-center text-white block py-8 page-padding-top px-8"
         >
           {frontmatter.title !== 'Tidal' ? (
             <i

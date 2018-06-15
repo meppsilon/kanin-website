@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 
 const Nav = ({ siteTitle, sections, onClickHandler }) => {
   return (
-    <div>
+    <div className="absolute">
       <div
         className="flex font-semibold fixed pin-r"
         style={{
