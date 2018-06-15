@@ -8,21 +8,19 @@ class MainArea extends React.Component {
   state = { page: "" };
 
   render() {
-    const { siteTitle, sections, children } = this.props;
-    console.log('url', this.props.url, this.state.page);
-
+    const { siteTitle, sections, children, url } = this.props;
     return (
-      <div className="h-screen flex relative bg-black">
-        <BackgroundMedia />
-        <div className="w-full h-full flex absolute z-20 text-black">
+      <div className="h-screen flex relative bg-black-true">
+        <BackgroundMedia page={url} />
+        <div className="w-full h-full flex absolute text-black">
+          <div className="absolute w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white">Kanin</div>
           <SocialMedia />
           <Nav
             siteTitle={siteTitle}
             sections={sections}
-            onClickHandler={page => this.setState({ page: page })}
           />
+          <Pages children={children} page={url} />
         </div>
-        <Pages children={children} page={this.state.page} />
       </div>
     );
   }

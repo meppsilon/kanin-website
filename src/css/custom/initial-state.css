@@ -22,3 +22,7 @@ td,
 th {
   @apply .p-0 .text-left;
 }
+
+.link, .link:active, .link:focus, .link:hover, .link:link, .link:visited {
+  transition: color 0.15s ease-in;
+}

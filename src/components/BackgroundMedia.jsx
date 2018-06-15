@@ -1,10 +1,21 @@
 import React from "react";
+import { Motion, spring } from "react-motion";
 
-const BackgroundMedia = () => (
-  <img
-    className="absolute cover h-screen w-screen"
-    src="https://scontent-lax3-2.cdninstagram.com/vp/8c88587e42a4f20045f789d871820cf6/5BB264C4/t51.2885-15/e15/10914702_838730536199107_203646013_n.jpg"
-  />
-);
+const BackgroundMedia = ({ page }) => {
+  return (
+    <Motion style={{ opacity: spring(page === "" ? 1 : 0.2) }}>
+      {({ opacity }) => (
+        <img
+          className="absolute cover h-screen w-screen"
+          style={{
+            filter: "sepia(100%) brightness(90%) grayscale(60%)",
+            opacity: opacity
+          }}
+          src="https://scontent-lax3-2.cdninstagram.com/vp/32225afe5338117b4aad2c8101440afc/5BA727F2/t51.2885-15/e35/26871991_210236116205238_8712684632765628416_n.jpg"
+        />
+      )}
+    </Motion>
+  );
+};
 
 export default BackgroundMedia;
