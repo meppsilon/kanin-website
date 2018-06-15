@@ -3,14 +3,13 @@ import Link from "gatsby-link";
 
 const Nav = ({ siteTitle, sections, onClickHandler }) => {
   return (
-    <div className="absolute">
+    <div className="absolute self-center" style={{ right: '36px' }}>
       <div
-        className="flex font-semibold fixed pin-r"
+        className="flex font-semibold pin-r"
         style={{
           transform: "rotate(-90deg) translateX(50%)",
           transformOrigin: 'right',
           top: `50%`,
-          right: '36px',
         }}
       >
         {sections.map(section => (
