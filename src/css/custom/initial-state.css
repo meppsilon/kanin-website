@@ -1,5 +1,5 @@
 body {
-  @apply .antialiased .font-sans;
+  @apply .antialiased .font-sans .scrolling-touch;
   color: var(--color-text-primary);
   text-rendering: optimizeLegibility;
   line-height: 1.15;

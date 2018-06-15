@@ -12,7 +12,7 @@ class Pages extends React.Component {
       <Motion style={{ margin: spring(page === 'empty' ? 0 : page === 'changing' ? 40 : 20) }}>
         {({ margin }) => (
           <div className="w-full overflow-auto flex justify-center">
-            <div className="scrolling-touch" style={{ marginTop: `${90}px`}}>{children()}</div>
+            <div className="" style={{ marginTop: `${90}px`}}>{children()}</div>
           </div>
         )}
       </Motion>
