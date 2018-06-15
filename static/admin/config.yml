@@ -11,7 +11,7 @@ collections:
     folder: "src/content/music-links"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "music-links"}
+      - {label: "Content Key", name: "contentKey", widget: "hidden", default: "music-links"}
       - {label: "Title", name: "title", widget: string}
       - {label: "Link", name: "link", widget: string}
   - name: "blog"
