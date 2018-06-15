@@ -13,13 +13,6 @@ collections:
       - {label: "Content Key", name: "contentKey", widget: "hidden", default: "music-links"}
       - {label: "Title", name: "title", widget: string}
       - {label: "Link", name: "link", widget: string}
-  - name: "socialLinks"
-    label: "Social Media Links"
-    folder: "src/content/src-links"
-    fields:
-      - {label: "Content Key", name: "contentKey", widget: "hidden", default: "social-links"}
-      - {label: "Title", name: "title", widget: string}
-      - {label: "Link", name: "link", widget: string}
   - name: "pages"
     label: "Pages"
     files:
