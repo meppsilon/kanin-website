@@ -11,8 +11,8 @@ class Pages extends React.Component {
     return (
       <Motion style={{ margin: spring(page === 'empty' ? 0 : page === 'changing' ? 40 : 20) }}>
         {({ margin }) => (
-          <div className="w-full overflow-auto">
-            <div style={{ marginTop: `${80}px`}}>{children()}</div>
+          <div className="w-full overflow-auto flex justify-center">
+            <div className="w-full" style={{ marginTop: `${90}px`}}>{children()}</div>
           </div>
         )}
       </Motion>

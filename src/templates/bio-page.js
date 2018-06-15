@@ -6,9 +6,9 @@ const BioPageTemplate = ({ content, contentComponent }) => {
   console.log('content', content);
 
   return (
-    <div id="bio" className="h-full w-full">
-      <div className="pt-8">
-        <div className="text-center w-64 mx-auto text-white">
+    <div id="bio" className="h-full mx-auto" style={{ width: '70%', maxWidth: '700px' }}>
+      <div>
+        <div className="text-center mx-auto text-white page-padding-top">
           <PageContent className="content" content={content} />
         </div>
       </div>
