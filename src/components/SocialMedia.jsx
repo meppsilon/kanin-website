@@ -1,7 +1,7 @@
 import React from "react";
 
 const SocialMedia = () => (
-  <div className="absolute flex flex-col transform-y-center" style={{ marginTop: '-20px' }}>
+  <div className="flex flex-col">
     <a href="https://www.instagram.com/itskanin/" className="links-social">
       <i className="fa fa-instagram text-white" aria-hidden="true" />
     </a>
