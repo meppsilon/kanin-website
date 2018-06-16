@@ -16,7 +16,7 @@ class MainArea extends React.Component {
           <div className="absolute flex transform-y-center fixed z-10" style={{ marginTop: '-20px' }}>
             <SocialMedia />
           </div>
-          <nav className="fixed self-center z-10 transform-y-center" style={{ right: '36px', zIndex: 9 }}>
+          <nav className="fixed self-center z-10 transform-y-center" style={{ right: '36px' }}>
             <Nav
               siteTitle={siteTitle}
               sections={sections}
