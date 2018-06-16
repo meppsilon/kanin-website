@@ -16,7 +16,7 @@ class MainArea extends React.Component {
           <div className="absolute flex transform-y-center fixed z-10" style={{ marginTop: '-20px' }}>
             <SocialMedia />
           </div>
-          <nav className="absolute self-center z-10 transform-y-center" style={{ right: '36px' }}>
+          <nav className="fixed self-center z-10 transform-y-center" style={{ right: '36px', zIndex: 9 }}>
             <Nav
               siteTitle={siteTitle}
               sections={sections}
@@ -24,7 +24,7 @@ class MainArea extends React.Component {
           </nav>
         </header>
         <BackgroundMedia page={url} />
-        <div className="w-full h-full flex absolute text-black">
+        <div className="w-full h-full flex absolute text-black overflow-scroll scrolling-touch">
           <Pages children={children} page={url} />
         </div>
       </div>
