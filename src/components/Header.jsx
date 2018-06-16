@@ -8,7 +8,7 @@ const Header = ({ siteTitle, sections }) => (
       Kanin
     </div>
     <div
-      className="absolute flex transform-y-center fixed z-10"
+      className="fixed flex transform-y-center fixed z-10"
       style={{ marginTop: "-20px" }}
     >
       <SocialMedia />
