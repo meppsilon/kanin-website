@@ -21,7 +21,7 @@ class Pages extends React.Component {
               {
                 // WebkitTransform: "translateZ(0px)",
                 // WebkitTransform: "translate3d(0,0,0)",
-                // WebkitPerspective: 1000
+                // WebkitPerspective: 1000,
               }
             }
           >
