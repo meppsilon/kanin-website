@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 const Header = ({ siteTitle, sections }) => (
   <header>
-    <div className="absolute w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white fixed z-10">
+    <div className="fixed w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white z-10">
       Kanin
     </div>
     <div

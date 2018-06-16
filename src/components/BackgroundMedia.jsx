@@ -6,7 +6,7 @@ const BackgroundMedia = ({ page }) => {
     <Motion style={{ opacity: spring(page === "" ? 1 : 0.2) }}>
       {({ opacity }) => (
         <img
-          className="absolute cover h-screen w-screen"
+          className="cover min-w-full min-h-full fixed"
           style={{
             filter: "sepia(100%) brightness(90%) grayscale(60%)",
             opacity: opacity

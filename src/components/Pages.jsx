@@ -15,16 +15,7 @@ class Pages extends React.Component {
         }}
       >
         {({ margin }) => (
-          <div
-            className="w-full overflow-auto flex justify-center"
-            style={
-              {
-                // WebkitTransform: "translateZ(0px)",
-                // WebkitTransform: "translate3d(0,0,0)",
-                // WebkitPerspective: 1000,
-              }
-            }
-          >
+          <div className="w-full overflow-auto flex justify-center">
             <div
               className=""
               style={{
