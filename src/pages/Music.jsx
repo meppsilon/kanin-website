@@ -1,4 +1,5 @@
 import React from 'react';
+import tidalLogo from '../assets/tidal_logo.png';
 
 const Music = ({
   data: {
@@ -19,7 +20,7 @@ const Music = ({
               aria-hidden="true"
             />
           ) : (
-            <div className="text-3xl font-bold ">{frontmatter.title}</div>
+            <img src={tidalLogo} style={{ height: '38px' }}/>
           )}
         </a>
       ))}
