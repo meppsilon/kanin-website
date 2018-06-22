@@ -11,8 +11,8 @@ const BioPageTemplate = ({ content, contentComponent }) => {
       style={{ width: '70%', maxWidth: '700px' }}
     >
       <div>
-        <div className="text-center mx-auto text-white page-padding-top">
-          <PageContent className="content" content={content} />
+        <div className="mx-auto text-white page-padding-top text-justify text-sm font-medium">
+          <PageContent className="content bio-p pb-6" content={content} />
         </div>
       </div>
     </div>

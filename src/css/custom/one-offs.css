@@ -21,3 +21,7 @@
 .pages-container {
   @apply .pt-8 .h-full;
 }
+
+.bio-p p {
+  @apply .leading-tight .pb-2;
+}
