@@ -8,7 +8,7 @@ const BioPageTemplate = ({ content, contentComponent }) => {
     <div
       id="bio"
       className="h-full mx-auto"
-      style={{ width: '70%', maxWidth: '700px' }}
+      style={{ width: '70%', maxWidth: '900px' }}
     >
       <div>
         <div className="mx-auto text-white page-padding-top text-justify text-sm font-medium md:text-base">
