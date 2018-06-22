@@ -8,10 +8,10 @@ const Contact = ({}) => {
     <div id="contact" className="h-screen">
       <div className="pt-8 text-center">
         {contactCategories.map(category => (
-          <div className="text-white" style={{ marginBottom: '2rem' }}>
+          <div className="text-white" style={{ marginBottom: '2rem' }} key={category}>
             <div className="text-lg font-bold mb-2">{category}</div>
             {contact[category].map(contact => (
-              <div className="mb-4">
+              <div className="mb-4" key={`${category}-${contact}`}>
                 <p className="text-white text-sm font-semibold block mb-1">{contact.name}</p>
                 {contact.email && (
                   <a className="text-white text-sm font-medium block mb-1" href={`mailto:${contact.email}`}>
