@@ -1,19 +1,28 @@
 import React from 'react';
-import Content, { HTMLContent } from '../components/Content';
 
-const ContactPageTemplate = ({ content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
+const ContactPageTemplate = ({ categories }) => {
 
   return (
-    <div
-      id="bio"
-      className="h-full mx-auto"
-      style={{ width: '70%', maxWidth: '900px' }}
-    >
-      <div>
-        <div className="mx-auto text-white page-padding-top text-justify text-sm font-medium md:text-base">
-          <PageContent className="content bio-p pb-6" content={content} />
-        </div>
+    <div id="contact" className="h-screen">
+      <div className="pt-8 text-center">
+        {categories.map(({ name, contacts }) => (
+          <div className="text-white" style={{ marginBottom: '2rem' }} key={name}>
+            <div className="text-lg font-bold mb-2">{name}</div>
+            {contacts.map(contact => (
+              <div className="mb-4" key={`${name}-${contact.name}`}>
+                <p className="text-white text-sm font-semibold block mb-1">{contact.name}</p>
+                {contact.email && (
+                  <a className="text-white text-sm font-medium block mb-1" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                )}
+                {contact.phone && (
+                  <p className="text-white block text-sm font-medium">{contact.phone}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -21,16 +30,28 @@ const ContactPageTemplate = ({ content, contentComponent }) => {
 
 const ContactPage = ({
   data: {
-    markdownRemark: { html },
+    markdownRemark: { frontmatter: { categories } },
   },
-}) => <ContactPageTemplate content={html} contentComponent={HTMLContent} />;
+}) => {
+  console.log('categories', categories);
+  return <ContactPageTemplate categories={categories} />
+};
 
 export default ContactPage;
 
 export const contactPageQuery = graphql`
   query ContactPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
+      frontmatter {
+        categories {
+          name
+          contacts {
+            name
+            phone
+            email
+          }
+        }
+      }
     }
   }
 `;
