@@ -1,46 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { Motion, spring } from "react-motion";
-import bannerImage from "../assets/banner-image.jpg";
-import MainArea from "../components/MainArea";
-import "../css/index.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { Motion, spring } from 'react-motion';
+import bannerImage from '../assets/banner-image.jpg';
+import MainArea from '../components/MainArea';
+import '../css/index.css';
 
-const title = "Kanin";
+const title = 'Kanin';
 const sections = [
   {
-    id: "",
-    title: "Home",
-    backgroundColor: "black",
-    color: "white"
+    id: '',
+    title: 'Home',
   },
   {
-    id: "music",
-    title: "Music",
-    style: {
-      backgroundColor: "blue",
-      color: "white"
-    }
+    id: 'music',
+    title: 'Music',
   },
   {
-    id: "bio",
-    title: "Bio",
-    style: {
-      backgroundColor: "green",
-      color: "white"
-    }
+    id: 'bio',
+    title: 'Bio',
   },
   {
-    id: "contact",
-    title: "Contact",
-    style: {
-      backgroundColor: "red",
-      color: "white"
-    }
-  }
+    id: 'contact',
+    title: 'Contact',
+  },
 ];
 
-const Layout = ({ data, children, location: { pathname } }) => (
+const Layout = ({
+  data: { socialLinks },
+  children,
+  location: { pathname },
+}) => (
   <div>
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -49,23 +39,49 @@ const Layout = ({ data, children, location: { pathname } }) => (
     <Helmet
       title={title}
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' },
       ]}
     >
-      <meta
-        property="og:image"
-        content={bannerImage}
-      />
+      <meta property="og:image" content={bannerImage} />
     </Helmet>
-    <MainArea title={title} sections={sections} url={pathname.slice(1)}>
+    <MainArea
+      title={title}
+      sections={sections}
+      url={pathname.slice(1)}
+      socialLinks={socialLinks}
+    >
       {children}
     </MainArea>
   </div>
 );
 
 Layout.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.func,
 };
 
 export default Layout;
+
+export const query = graphql`
+  query IndexQuery {
+    socialLinks: allMarkdownRemark(
+      sort: { fields: [frontmatter___index], order: ASC }
+      filter: { frontmatter: { contentKey: { eq: "social-links" } } }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 400)
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            icon
+            link
+          }
+        }
+      }
+    }
+  }
+`;

@@ -6,6 +6,15 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "socialLinks"
+    label: "Social Links"
+    folder: "src/content/social-links"
+    fields:
+      - {label: "Content Key", name: "contentKey", widget: "hidden", default: "social-links"}
+      - {label: "Index", name: "index", widget: "hidden"}
+      - {label: "Icon", name: "icon", widget: hidden}
+      - {label: "Title", name: "title", widget: string}
+      - {label: "Link", name: "link", widget: string}
   - name: "musicLinks"
     label: "Music Links"
     folder: "src/content/music-links"

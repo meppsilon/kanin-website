@@ -3,7 +3,7 @@ import SocialMedia from "./SocialMedia";
 import Nav from "./Nav";
 import logoName from "../assets/logo-name.png";
 
-const Header = ({ siteTitle, sections, url }) => (
+const Header = ({ siteTitle, sections, url, socialLinks }) => (
   <header>
     <div
       className="fixed w-full text-center pt-6 z-10 flex"
@@ -15,14 +15,11 @@ const Header = ({ siteTitle, sections, url }) => (
         style={{ width: "30%", maxWidth: '200px' }}
       />
     </div>
-    {/* <div className="fixed w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white z-10">
-      Kanin
-    </div> */}
     <div
       className="fixed flex transform-y-center fixed z-10"
       style={{ marginTop: "-20px" }}
     >
-      <SocialMedia />
+      <SocialMedia socialLinks={socialLinks} />
     </div>
     <nav
       className="fixed self-center z-10 transform-y-center"
