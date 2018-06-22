@@ -6,18 +6,26 @@ const Contact = ({}) => {
   const contactCategories = Object.keys(contact);
   return (
     <div id="contact" className="h-screen">
-      {contactCategories.map(category => (
-        <div className="text-white">
-          <div>{category}</div>
-          {contact[category].map(contact => (
-            <div>
-              <p>{contact.name}</p>
-              {contact.email && <p>{contact.email}</p>}
-              {contact.phone && <p>{contact.phone}</p>}
-            </div>
-          ))}
-        </div>
-      ))}
+      <div className="pt-8 text-center">
+        {contactCategories.map(category => (
+          <div className="text-white" style={{ marginBottom: '2rem' }}>
+            <div className="text-lg font-bold mb-2">{category}</div>
+            {contact[category].map(contact => (
+              <div className="mb-4">
+                <p className="text-white text-sm font-semibold block mb-1">{contact.name}</p>
+                {contact.email && (
+                  <a className="text-white text-sm font-medium block mb-1" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                )}
+                {contact.phone && (
+                  <p className="text-white block text-sm font-medium">{contact.phone}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
