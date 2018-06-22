@@ -12,7 +12,7 @@ const Nav = ({ siteTitle, sections, onClickHandler }) => {
     >
       {sections.map(section => (
         <Link
-          className="px-3 text-white text-sm font-bold nav-link-last py-4"
+          className="px-3 text-white text-sm font-bold nav-link-last py-4 opacity-hover"
           key={section.id}
           to={`/${section.id}`}
         >

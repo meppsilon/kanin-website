@@ -1,11 +1,23 @@
-.nav-link-last:last-child {
-  padding-right: 0;
-  }
-
 .music-link-first:first-child {
   padding-top: 0;
 }
 
 .page-padding-top {
   @apply .pt-8;
+}
+
+.opacity-hover:hover {
+  opacity: .8;
+}
+
+.opacity-hover:active {
+  background-color: black;
+}
+
+.links-social {
+  @apply .pt-2 .pb-2 .text-xl .px-7;
+}
+
+.pages-container {
+  @apply .pt-8 .h-full;
 }
