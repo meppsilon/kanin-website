@@ -1,3 +1,7 @@
+body {
+  @apply .bg-black-true;
+}
+
 .music-link-first:first-child {
   padding-top: 0;
 }
@@ -6,11 +10,11 @@
   @apply .pt-8;
 }
 
-.opacity-hover:hover {
-  opacity: .8;
+.ux-hover:hover {
+  opacity: .75;
 }
 
-.opacity-hover:active {
+.ux-click:active {
   background-color: black;
 }
 
@@ -23,26 +27,6 @@
 }
 
 .bio-p p {
-  @apply .leading-tight .pb-2;
-}
-
-
-.contact-item {
-  @apply .pb-4;
-}
-
-.contact-name {
-  @apply .text-white;
-}
-
-.contact-email {
-  @apply .text-white;
-}
-
-.contact-phone {
-  @apply .text-white;
-}
-
-body {
-  @apply .bg-black-true;
+  @apply .pb-2;
+  line-height: 1.35;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import SocialMedia from "./SocialMedia";
 import Nav from "./Nav";
 
-const Header = ({ siteTitle, sections }) => (
+const Header = ({ siteTitle, sections, url }) => (
   <header>
     <div className="fixed w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white z-10">
       Kanin
@@ -17,7 +17,7 @@ const Header = ({ siteTitle, sections }) => (
       className="fixed self-center z-10 transform-y-center"
       style={{ right: "36px" }}
     >
-      <Nav siteTitle={siteTitle} sections={sections} />
+      <Nav siteTitle={siteTitle} sections={sections} url={url} />
     </nav>
   </header>
 );

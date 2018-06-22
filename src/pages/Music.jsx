@@ -12,7 +12,7 @@ const Music = ({
         <a
           key={frontmatter.title}
           href={frontmatter.link}
-          className="text-center text-white block py-8 page-padding-top px-8"
+          className="text-center text-white block py-8 page-padding-top px-8 ux-hover"
         >
           {frontmatter.title !== 'Tidal' ? (
             <i
@@ -20,7 +20,7 @@ const Music = ({
               aria-hidden="true"
             />
           ) : (
-            <img src={tidalLogo} style={{ height: '38px' }}/>
+            <img src={tidalLogo} style={{ height: '38px' }} className="ux-hover" />
           )}
         </a>
       ))}
