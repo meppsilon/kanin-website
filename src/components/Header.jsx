@@ -1,12 +1,23 @@
 import React from "react";
 import SocialMedia from "./SocialMedia";
 import Nav from "./Nav";
+import logoName from "../assets/logo-name.png";
 
 const Header = ({ siteTitle, sections, url }) => (
   <header>
-    <div className="fixed w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white z-10">
-      Kanin
+    <div
+      className="fixed w-full text-center pt-6 z-10 flex"
+      style={{ height: "20%" }}
+    >
+      <img
+        className="mx-auto max-h-full flex self-center"
+        src={logoName}
+        style={{ width: "30%", maxWidth: '200px' }}
+      />
     </div>
+    {/* <div className="fixed w-full mx-auto text-center pt-6 font-extrabold text-4xl text-white z-10">
+      Kanin
+    </div> */}
     <div
       className="fixed flex transform-y-center fixed z-10"
       style={{ marginTop: "-20px" }}

@@ -5,7 +5,7 @@ const Pages = ({ children }) => (
     <div
       className=""
       style={{
-        marginTop: `${90}px`
+        marginTop: `${120}px`
       }}
     >
       {children()}
