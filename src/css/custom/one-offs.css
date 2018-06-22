@@ -25,3 +25,24 @@
 .bio-p p {
   @apply .leading-tight .pb-2;
 }
+
+
+.contact-item {
+  @apply .pb-4;
+}
+
+.contact-name {
+  @apply .text-white;
+}
+
+.contact-email {
+  @apply .text-white;
+}
+
+.contact-phone {
+  @apply .text-white;
+}
+
+body {
+  @apply .bg-black-true;
+}
