@@ -6,7 +6,7 @@ export const BackgroundMediaTemplate = ({ page, type, media }) => {
   return (
     <Motion style={{ opacity: spring(page === '' ? 1 : 0.2) }}>
       {({ opacity }) =>
-        type === 'image' && (
+        type === 'image' ? (
           <img
             className="cover min-w-full min-h-full fixed transform-xy-center"
             style={{
@@ -15,6 +15,10 @@ export const BackgroundMediaTemplate = ({ page, type, media }) => {
             }}
             src={media}
           />
+        ) : (
+          <video autoplay muted loop>
+            <source src={media} type="video/mp4" />
+          </video>
         )
       }
     </Motion>
