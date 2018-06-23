@@ -5,7 +5,7 @@ export const ContactPageTemplate = ({ categories }) => (
     <div className="pt-8 text-center">
       {categories.map(({ name, contacts }) => (
         <div className="text-white" style={{ marginBottom: '2rem' }} key={name}>
-          <div className="text-lg font-bold mb-2">{name}</div>
+          <div className="text-xl font-bold mb-2">{name}</div>
           {contacts.map(contact => (
             <div className="mb-4" key={`${name}-${contact.name}`}>
               <p className="text-white text-sm font-semibold block mb-1">
