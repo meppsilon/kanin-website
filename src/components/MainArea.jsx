@@ -3,7 +3,14 @@ import Header from './Header';
 import BackgroundMedia from './BackgroundMedia';
 import Pages from './Pages';
 
-const MainArea = ({ siteTitle, sections, children, url, socialLinks }) => (
+const MainArea = ({
+  siteTitle,
+  sections,
+  children,
+  url,
+  socialLinks,
+  backgroundMedia,
+}) => (
   <div className="h-screen flex relative bg-black-true">
     <Header
       siteTitle={siteTitle}
@@ -11,7 +18,7 @@ const MainArea = ({ siteTitle, sections, children, url, socialLinks }) => (
       url={url}
       socialLinks={socialLinks}
     />
-    <BackgroundMedia page={url} />
+    <BackgroundMedia page={url} backgroundMedia={backgroundMedia} />
     <div className="w-full h-full flex fixed text-black overflow-scroll scrolling-touch">
       <Pages children={children} page={url} />
     </div>

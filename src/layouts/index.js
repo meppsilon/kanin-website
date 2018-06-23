@@ -27,7 +27,7 @@ const sections = [
 ];
 
 const Layout = ({
-  data: { socialLinks },
+  data: { socialLinks, backgroundMedia },
   children,
   location: { pathname },
 }) => (
@@ -50,6 +50,7 @@ const Layout = ({
       sections={sections}
       url={pathname.slice(1)}
       socialLinks={socialLinks}
+      backgroundMedia={backgroundMedia}
     >
       {children}
     </MainArea>
@@ -81,6 +82,12 @@ export const query = graphql`
             link
           }
         }
+      }
+    }
+    backgroundMedia: markdownRemark(frontmatter: { contentKey: { eq: "background-media" } }) {
+      frontmatter {
+        type
+        media
       }
     }
   }
