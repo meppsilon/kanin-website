@@ -1,7 +1,7 @@
 import React from 'react';
 import Content, { HTMLContent } from '../components/Content';
 
-const BioPageTemplate = ({ content, contentComponent }) => {
+export const BioPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactPageTemplate = ({ categories }) => (
+export const ContactPageTemplate = ({ categories }) => (
   <div id="contact" className="h-screen">
     <div className="pt-8 text-center">
       {categories.map(({ name, contacts }) => (
