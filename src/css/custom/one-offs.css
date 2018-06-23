@@ -19,7 +19,7 @@ body {
 }
 
 .links-social {
-  @apply .pt-2 .pb-2 .text-xl .px-7;
+  @apply .pt-2 .pb-2 .text-xl .px-5;
 }
 
 .pages-container {

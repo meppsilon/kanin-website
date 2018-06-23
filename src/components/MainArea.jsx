@@ -12,7 +12,7 @@ const MainArea = ({ siteTitle, sections, children, url, socialLinks }) => (
       socialLinks={socialLinks}
     />
     <BackgroundMedia page={url} />
-    <div className="w-full h-full flex absolute text-black overflow-scroll scrolling-touch">
+    <div className="w-full h-full flex fixed text-black overflow-scroll scrolling-touch">
       <Pages children={children} page={url} />
     </div>
   </div>
