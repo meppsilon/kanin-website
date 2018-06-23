@@ -18,7 +18,10 @@ const MainArea = ({
       url={url}
       socialLinks={socialLinks}
     />
-    <BackgroundMedia page={url} backgroundMedia={backgroundMedia} />
+    <BackgroundMedia
+      page={url}
+      backgroundMedia={backgroundMedia}
+    />
     <div className="w-full h-full flex fixed text-black overflow-scroll scrolling-touch">
       <Pages children={children} page={url} />
     </div>

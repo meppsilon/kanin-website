@@ -2,12 +2,7 @@ import React from 'react';
 import { Motion, spring } from 'react-motion';
 import bannerImage from '../assets/banner-image.jpg';
 
-const BackgroundMedia = ({
-  page,
-  backgroundMedia: {
-    frontmatter: { type, media },
-  },
-}) => {
+export const BackgroundMediaTemplate = ({ page, type, media }) => {
   return (
     <Motion style={{ opacity: spring(page === '' ? 1 : 0.2) }}>
       {({ opacity }) =>
@@ -25,5 +20,13 @@ const BackgroundMedia = ({
     </Motion>
   );
 };
+
+const BackgroundMedia = ({ page, backgroundMedia }) => (
+  <BackgroundMediaTemplate
+    page={page}
+    type={backgroundMedia.frontmatter.type}
+    media={backgroundMedia.frontmatter.media}
+  />
+);
 
 export default BackgroundMedia;
