@@ -7,4 +7,4 @@ import BackgroundPreviewPage from './preview-templates/BackgroundPreviewPage'
 CMS.registerPreviewStyle('/styles.css')
 CMS.registerPreviewTemplate('bio', BioPreviewPage)
 CMS.registerPreviewTemplate('contact', ContactPreviewPage)
-CMS.registerPreivewTemplate('background', BackgroundPreviewPage)
+CMS.registerPreviewTemplate('background', BackgroundPreviewPage)
