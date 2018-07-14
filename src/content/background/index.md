@@ -1,6 +1,5 @@
 ---
 contentKey: background-media
-type: image
-media: /img/banner-image.jpg
+type: video
+media: /img/sample-vid.mp4
 ---
-
