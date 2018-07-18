@@ -1,5 +1,6 @@
 ---
 contentKey: background-media
-image: /img/banner-image.jpg
+image: /img/_dsc3237.jpg
 fontColor: black
 ---
+
