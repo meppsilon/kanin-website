@@ -10,7 +10,7 @@ export const BackgroundMediaTemplate = ({ isOpaque, type, media }) => {
           <img
             className="cover min-w-full min-h-full fixed transform-xy-center"
             style={{
-              filter: 'sepia(100%) brightness(90%) grayscale(60%)',
+              // filter: 'sepia(100%) brightness(90%) grayscale(60%)',
               opacity: opacity,
             }}
             src={media}
