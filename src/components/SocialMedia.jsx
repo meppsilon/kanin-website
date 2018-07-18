@@ -1,12 +1,22 @@
 import React from "react";
 
-const SocialMedia = ({ socialLinks }) => (
+const SocialMedia = ({ socialLinks, renderedColor }) => (
   <div className="flex flex-col">
-    {socialLinks.edges.map(({ node: { frontmatter: { title, icon, link } } }) => (
-      <a href={link} className="links-social ux-hover">
-        <i className={`fa fa-${icon} text-white`} aria-hidden="true" />
-      </a>
-    ))}
+    {socialLinks.edges.map(
+      ({
+        node: {
+          frontmatter: { title, icon, link }
+        }
+      }) => (
+        <a href={link} className="links-social ux-hover">
+          <i
+            className={`fa fa-${icon}`}
+            style={{ color: renderedColor }}
+            aria-hidden="true"
+          />
+        </a>
+      )
+    )}
   </div>
 );
 

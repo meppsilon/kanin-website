@@ -16,6 +16,7 @@ collections:
           - {label: "Content Key", name: "contentKey", widget: hidden, default: "background-media"}
           - {label: "Type", name: type, widget: select, options: ["image", "video"]}
           - {label: "Media", name: media, widget: file}
+          - {label: "Font Color", name: fontColor, widget: select, options: ["white", "black"]}
   - name: "socialLinks"
     label: "Social Links"
     folder: "src/content/social-links"

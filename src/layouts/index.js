@@ -51,6 +51,7 @@ const Layout = ({
       url={pathname.slice(1)}
       socialLinks={socialLinks}
       backgroundMedia={backgroundMedia}
+      fontColor={backgroundMedia.frontmatter.fontColor}
     >
       {children}
     </MainArea>
@@ -88,6 +89,7 @@ export const query = graphql`
       frontmatter {
         type
         media
+        fontColor
       }
     }
   }

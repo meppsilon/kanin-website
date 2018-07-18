@@ -1,30 +1,22 @@
-import React from "react";
-import { Motion, spring } from "react-motion";
-import bannerImage from "../assets/banner-image.jpg";
+import React from 'react';
+import { Motion, spring } from 'react-motion';
+import bannerImage from '../assets/banner-image.jpg';
 
-export const BackgroundMediaTemplate = ({ page, type, media }) => {
+export const BackgroundMediaTemplate = ({ isOpaque, type, media }) => {
   return (
-    <Motion style={{ opacity: spring(page === "" ? 1 : 0.2) }}>
+    <Motion style={{ opacity: spring(isOpaque ? 0.2 : 1) }}>
       {({ opacity }) =>
-        type === "image" ? (
+        type === 'image' ? (
           <img
             className="cover min-w-full min-h-full fixed transform-xy-center"
             style={{
-              filter: "sepia(100%) brightness(90%) grayscale(60%)",
-              opacity: opacity
+              filter: 'sepia(100%) brightness(90%) grayscale(60%)',
+              opacity: opacity,
             }}
             src={media}
           />
         ) : (
-          <video
-            autoPlay
-            muted
-            loop
-            className="w-screen h-screen cover"
-            style={{
-              opacity: opacity
-            }}
-          >
+          <video autoplay muted loop>
             <source src={media} type="video/mp4" />
           </video>
         )
@@ -33,9 +25,9 @@ export const BackgroundMediaTemplate = ({ page, type, media }) => {
   );
 };
 
-const BackgroundMedia = ({ page, backgroundMedia }) => (
+const BackgroundMedia = ({ isOpaque, backgroundMedia }) => (
   <BackgroundMediaTemplate
-    page={page}
+    isOpaque={isOpaque}
     type={backgroundMedia.frontmatter.type}
     media={backgroundMedia.frontmatter.media}
   />
