@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Motion, spring } from 'react-motion';
-import bannerImage from '../assets/banner-image.jpg';
 import MainArea from '../components/MainArea';
 import '../css/index.css';
 
@@ -43,7 +42,7 @@ const Layout = ({
         { name: 'keywords', content: 'sample, something' },
       ]}
     >
-      <meta property="og:image" content={bannerImage} />
+      <meta property="og:image" content={backgroundMedia.frontmatter.image} />
     </Helmet>
     <MainArea
       title={title}
@@ -87,8 +86,7 @@ export const query = graphql`
     }
     backgroundMedia: markdownRemark(frontmatter: { contentKey: { eq: "background-media" } }) {
       frontmatter {
-        type
-        media
+        image
         fontColor
       }
     }

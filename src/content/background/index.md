@@ -1,6 +1,5 @@
 ---
 contentKey: background-media
-type: image
-media: /img/banner-image.jpg
+image: /img/banner-image.jpg
 fontColor: black
 ---
