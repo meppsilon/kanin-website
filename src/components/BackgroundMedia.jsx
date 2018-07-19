@@ -7,7 +7,7 @@ export const BackgroundMediaTemplate = ({ isOpaque, image }) => {
     <Motion style={{ opacity: spring(isOpaque ? 0.2 : 1) }}>
       {({ opacity }) => (
         <img
-          className="cover min-w-full min-h-full fixed transform-xy-center"
+          className="cover min-w-full min-h-full fixed md:top-20"
           style={{
             // filter: 'sepia(100%) brightness(90%) grayscale(60%)',
             opacity: opacity
