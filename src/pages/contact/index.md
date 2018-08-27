@@ -18,6 +18,6 @@ categories:
       - email: winwinmusic1@gmail.com
         name: Jay Dnairo
         phone: 310-904-3407
-    name: Record Label
+    name: WinWin Music Label
 ---
 
