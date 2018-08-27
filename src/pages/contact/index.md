@@ -1,5 +1,5 @@
 ---
-templateKey: "contact-page"
+templateKey: contact-page
 categories:
   - contacts:
       - email: saul@goodvibecrew.com
@@ -17,5 +17,7 @@ categories:
   - contacts:
       - email: winwinmusic1@gmail.com
         name: Jay Dnairo
+        phone: 310-904-3407
     name: Record Label
 ---
+
