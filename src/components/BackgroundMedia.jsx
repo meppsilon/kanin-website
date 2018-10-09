@@ -51,7 +51,6 @@ class BackgroundMediaTemplate extends Component {
         {({ opacity }) => (
           <img
             alt=""
-            key={this.state.index}
             className="cover min-w-full min-h-full fixed md:top-20"
             style={{
               opacity: opacity
