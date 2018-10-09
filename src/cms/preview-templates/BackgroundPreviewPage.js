@@ -4,7 +4,7 @@ import { BackgroundMediaTemplate } from '../../components/BackgroundMedia'
 
 const BackgroundPagePreview = ({ entry, widgetFor }) => (
   <BackgroundMediaTemplate
-    image={entry.getIn(['data', 'image'])}
+    photos={entry.getIn(['data', 'photos', 'photo'])}
     fontColor={entry.getIn(['data', 'fontColor'])}
   />
 )
