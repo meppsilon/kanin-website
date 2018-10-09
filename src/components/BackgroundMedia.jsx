@@ -3,7 +3,7 @@ import { Motion, spring } from "react-motion";
 import bannerImage from "../assets/banner-image.jpg";
 
 class BackgroundMediaTemplate extends Component {
-  state = { invervalId: null, index: 0 };
+  state = { invervalId: null, index: null };
 
   componentDidMount() {
     let transitionTime;
@@ -13,7 +13,9 @@ class BackgroundMediaTemplate extends Component {
       transitionTime = 10000;
     }
     const intervalId = setInterval(this.setIndex, transitionTime);
-    this.setState({ intervalId: intervalId });
+    //setting index is stupid hack to force a reset because image sometimes
+    // doesn't download fully on mobile devices....
+    this.setState({ intervalId: intervalId, index: 0 });
   }
 
   componentWillMount() {
