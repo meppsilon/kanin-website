@@ -30,7 +30,6 @@ const sections = [
 const Layout = ({
   children,
   location: { pathname },
-  data: { backgroundMedia, socialLinks }
 }) => (
   <StaticQuery
     query={graphql`
