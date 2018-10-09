@@ -86,8 +86,11 @@ export const query = graphql`
     }
     backgroundMedia: markdownRemark(frontmatter: { contentKey: { eq: "background-media" } }) {
       frontmatter {
-        image
         fontColor
+        transitionTime
+        photos {
+          photo
+        }
       }
     }
   }

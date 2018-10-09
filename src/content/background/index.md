@@ -1,6 +1,8 @@
 ---
 contentKey: background-media
-image: /img/_dsc3099.jpg
 fontColor: black
+transitionTime: '10'
+photos:
+  - photo: /img/_dsc3099.jpg
+  - photo: /img/banner-image.jpg
 ---
-
