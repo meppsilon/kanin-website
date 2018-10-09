@@ -57,7 +57,7 @@ class BackgroundMediaTemplate extends Component {
             style={{
               opacity: opacity
             }}
-            src={photos[index].photo}
+            src={photos[index || 0].photo}
           />
         )}
       </Motion>
