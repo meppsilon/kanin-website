@@ -1,5 +1,7 @@
-import React from 'react';
-import Content, { HTMLContent } from '../components/Content';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import Content, { HTMLContent } from "../components/Content";
 
 export const BioPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
@@ -8,7 +10,7 @@ export const BioPageTemplate = ({ content, contentComponent }) => {
     <div
       id="bio"
       className="h-full mx-auto"
-      style={{ width: '70%', maxWidth: '900px' }}
+      style={{ width: "70%", maxWidth: "900px" }}
     >
       <div>
         <div className="mx-auto text-white page-padding-top text-justify text-sm font-medium md:text-base">
@@ -20,10 +22,15 @@ export const BioPageTemplate = ({ content, contentComponent }) => {
 };
 
 const BioPage = ({
+  location,
   data: {
-    markdownRemark: { html },
-  },
-}) => <BioPageTemplate content={html} contentComponent={HTMLContent} />;
+    markdownRemark: { html }
+  }
+}) => (
+  <Layout location={location}>
+    <BioPageTemplate content={html} contentComponent={HTMLContent} />
+  </Layout>
+);
 
 export default BioPage;
 

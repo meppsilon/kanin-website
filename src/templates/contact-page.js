@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from '../components/layout';
 
 export const ContactPageTemplate = ({ categories }) => (
   <div id="contact" className="h-screen">
     <div className="pt-8 text-center">
       {categories.map(({ name, contacts }) => (
-        <div className="text-white" style={{ marginBottom: '2rem' }} key={name}>
+        <div className="text-white" style={{ marginBottom: "2rem" }} key={name}>
           <div className="text-xl font-bold mb-2">{name}</div>
           {contacts.map(contact => (
             <div className="mb-4" key={`${name}-${contact.name}`}>
@@ -33,12 +35,17 @@ export const ContactPageTemplate = ({ categories }) => (
 );
 
 const ContactPage = ({
+  location,
   data: {
     markdownRemark: {
-      frontmatter: { categories },
-    },
-  },
-}) => <ContactPageTemplate categories={categories} />;
+      frontmatter: { categories }
+    }
+  }
+}) => (
+  <Layout location={location}>
+    <ContactPageTemplate categories={categories} />
+  </Layout>
+);
 
 export default ContactPage;
 

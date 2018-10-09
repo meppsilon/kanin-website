@@ -8,7 +8,7 @@ const Pages = ({ children }) => (
         marginTop: `${120}px`
       }}
     >
-      {children()}
+      {children}
     </div>
   </div>
 );

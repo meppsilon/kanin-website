@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Motion, spring } from "react-motion";
-import bannerImage from "../assets/banner-image.jpg";
 
-class BackgroundMediaTemplate extends Component {
-  state = { invervalId: null, index: null };
+export class BackgroundMediaTemplate extends Component {
+  state = { invervalId: null, index: 0 };
 
   componentDidMount() {
     let transitionTime;
@@ -13,12 +12,10 @@ class BackgroundMediaTemplate extends Component {
       transitionTime = 10000;
     }
     const intervalId = setInterval(this.setIndex, transitionTime);
-    //setting index is stupid hack to force a reset because image sometimes
-    // doesn't download fully on mobile devices....
-    this.setState({ intervalId: intervalId, index: 0 });
+    this.setState({ intervalId: intervalId });
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     clearInterval(this.state.intervalId);
   }
 
@@ -43,7 +40,6 @@ class BackgroundMediaTemplate extends Component {
   render() {
     const { isOpaque, photos } = this.props;
     const { index } = this.state;
-    console.log('index', index)
     return (
       <Motion
         style={{ opacity: spring(isOpaque ? 0.2 : 1) }}
@@ -57,7 +53,7 @@ class BackgroundMediaTemplate extends Component {
             style={{
               opacity: opacity
             }}
-            src={photos[index || 0].photo}
+            src={photos[index].photo}
           />
         )}
       </Motion>

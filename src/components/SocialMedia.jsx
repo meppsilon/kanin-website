@@ -8,7 +8,7 @@ const SocialMedia = ({ socialLinks, renderedColor }) => (
           frontmatter: { title, icon, link }
         }
       }) => (
-        <a href={link} className="links-social ux-hover">
+        <a href={link} className="links-social ux-hover" key={link}>
           <i
             className={`fa fa-${icon}`}
             style={{ color: renderedColor }}
