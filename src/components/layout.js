@@ -26,44 +26,47 @@ const sections = [
   }
 ];
 
-export const query = graphql`
-  query IndexQuery {
-    socialLinks: allMarkdownRemark(
-      sort: { fields: [frontmatter___index], order: ASC }
-      filter: { frontmatter: { contentKey: { eq: "social-links" } } }
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            icon
-            link
-          }
-        }
-      }
-    }
-    backgroundMedia: markdownRemark(
-      frontmatter: { contentKey: { eq: "background-media" } }
-    ) {
-      frontmatter {
-        fontColor
-        transitionTime
-        photos {
-          photo
-        }
-      }
-    }
-  }
-`;
 
-const Layout = ({ children, location: { pathname } }) => (
+const Layout = ({
+  children,
+  location: { pathname },
+  data: { backgroundMedia, socialLinks }
+}) => (
   <StaticQuery
-    query={query}
+    query={graphql`
+      query IndexQuery {
+        socialLinks: allMarkdownRemark(
+          sort: { fields: [frontmatter___index], order: ASC }
+          filter: { frontmatter: { contentKey: { eq: "social-links" } } }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                icon
+                link
+              }
+            }
+          }
+        }
+        backgroundMedia: markdownRemark(
+          frontmatter: { contentKey: { eq: "background-media" } }
+        ) {
+          frontmatter {
+            fontColor
+            transitionTime
+            photos {
+              photo
+            }
+          }
+        }
+      }
+    `}
     render={({ backgroundMedia, socialLinks }) => (
       <div>
         <link
