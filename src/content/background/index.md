@@ -1,6 +1,6 @@
 ---
 contentKey: background-media
-musicLink: smarturl.it/jjrfq7
+musicLink: 'http://smarturl.it/jjrfq7'
 fontColor: black
 transitionTime: '10'
 photos:
