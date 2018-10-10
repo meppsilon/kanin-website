@@ -59,6 +59,7 @@ const Layout = ({
           frontmatter {
             fontColor
             transitionTime
+            musicLink
             photos {
               photo
             }

@@ -14,6 +14,7 @@ collections:
         name: "media"
         fields:
           - {label: "Content Key", name: "contentKey", widget: hidden, default: "background-media"}
+          - {label: "Music Link", name: "musicLink", widget: string}
           - {label: "Font Color", name: fontColor, widget: select, options: ["white", "black"]}
           - {label: "Transition Time (in seconds)", name: transitionTime, widget: string, required: false}
           - label: "Photos"

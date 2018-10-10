@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Motion, spring } from "react-motion";
+import { TransitionMotion, Motion, spring } from "react-motion";
+import { Transition } from "react-spring";
 
 export class BackgroundMediaTemplate extends Component {
   state = { invervalId: null, index: 0 };
@@ -27,34 +28,42 @@ export class BackgroundMediaTemplate extends Component {
     this.setState({ index: newIndex });
   };
 
-  willEnter = () => {
-    return { opacity: 0 };
-  };
+  willEnter = () => ({ opacity: 0 });
 
-  willLeave = () => {
-    return {
-      opacity: spring(0, { stiffness: 90, damping: 11 })
-    };
-  };
+  willLeave = () => ({
+    opacity: spring(0)
+  });
 
   render() {
-    const { isOpaque, photos } = this.props;
+    const { isOpaque, photos, musicLink } = this.props;
     const { index } = this.state;
     return (
-      <Motion
-        style={{ opacity: spring(isOpaque ? 0.2 : 1) }}
-        willEnter={this.willEnter()}
-        willLeave={this.willLeave()}
-      >
+      <Motion style={{ opacity: spring(isOpaque ? 0.2 : 1) }}>
         {({ opacity }) => (
-          <img
-            alt=""
-            className="cover min-w-full min-h-full fixed md:top-20"
-            style={{
-              opacity: opacity
-            }}
-            src={photos[index].photo}
-          />
+          <div style={{ opacity }}>
+            <div className="flex absolute h-full w-full">
+              <a
+                className="font-bold self-center mx-auto z-10 border-2 px-4 py-2 text-2xl text-white cursor-pointer"
+                href={musicLink}
+              >
+                <div>Listen Now</div>
+              </a>
+            </div>
+            <Transition
+              from={{ opacity: 0 }}
+              enter={{ opacity: 1 }}
+              leave={{ opacity: 0 }}
+            >
+              {styles => (
+                <img
+                  alt=""
+                  className="cover min-w-full min-h-full fixed md:top-20"
+                  style={styles}
+                  src={photos[index].photo}
+                />
+              )}
+            </Transition>
+          </div>
         )}
       </Motion>
     );
@@ -65,6 +74,7 @@ const BackgroundMedia = ({ isOpaque, backgroundMedia }) => (
   <BackgroundMediaTemplate
     isOpaque={isOpaque}
     photos={backgroundMedia.frontmatter.photos}
+    musicLink={backgroundMedia.frontmatter.musicLink}
     transitionTime={backgroundMedia.frontmatter.transitionTime}
   />
 );
