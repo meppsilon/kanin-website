@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TransitionMotion, Motion, spring } from "react-motion";
-import { Transition } from "react-spring";
+import BackgroundImage from './BackgroundImage';
 
 export class BackgroundMediaTemplate extends Component {
   state = { invervalId: null, index: 0 };
@@ -49,20 +49,7 @@ export class BackgroundMediaTemplate extends Component {
                 <div>Listen Now</div>
               </a>
             </div>
-            <Transition
-              from={{ opacity: 0 }}
-              enter={{ opacity: 1 }}
-              leave={{ opacity: 0 }}
-            >
-              {styles => (
-                <img
-                  alt=""
-                  className="cover min-w-full min-h-full fixed md:top-20"
-                  style={styles}
-                  src={photos[index].photo}
-                />
-              )}
-            </Transition>
+            <BackgroundImage photo={photos[index].photo}/>
           </div>
         )}
       </Motion>
